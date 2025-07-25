@@ -1,0 +1,17 @@
+# Bỏ qua thư mục cache và file hệ thống của Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Bỏ qua thư mục build
+bin/
+obj/
+Debug/
+Release/
+
+# Bỏ qua file tạm
+*.log
+*.tmp
+*.vsidx

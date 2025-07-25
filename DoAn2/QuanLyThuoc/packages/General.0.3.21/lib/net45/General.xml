@@ -1,0 +1,1402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>General</name>
+    </assembly>
+    <members>
+        <member name="T:General.Collections.ComparableCollectionBase`1">
+            <summary>
+            Encapsulates member for ComparableCollectionBase abstarct class.
+            Inherited classes from this class can represent a collection of <typeparamref name="T"/> which can be compaired with anothe collection of the same type.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:General.Collections.ComparableCollectionBase`1.ComparisonRule">
+            <summary>
+            Gets or sets Comparison Rule.
+            </summary>
+            <value>Comparison Rule.</value>
+        </member>
+        <member name="P:General.Collections.ComparableCollectionBase`1.X">
+            <summary>
+            Gets or set a number which might be used by the associated <see cref="P:General.Collections.ComparableCollectionBase`1.ComparisonRule"/>.
+            </summary>
+            <value>A number which might be used by the associated <see cref="P:General.Collections.ComparableCollectionBase`1.ComparisonRule"/>.</value>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.#ctor">
+            <summary>
+            Base Initializer.
+            </summary>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.Add(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds a new series of <typeparamref name="T"/> to the corrent collection.
+            </summary>
+            <param name="listOfT"></param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="P:General.Collections.ComparableCollectionBase`1.Item(System.Int32)">
+            <summary>
+            Indexes an object of <typeparamref name="T"/> in the current collection.
+            </summary>
+            <param name="index"></param>
+            <returns>An item of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.Has(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Indicates if the current collection contains <paramref name="listOfT"/> by using <see cref="P:General.Collections.ComparableCollectionBase`1.ComparisonRule"/>
+            </summary>
+            <param name="listOfT"></param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.BelongsTo(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Indicates if the current collection contains <paramref name="listOfT"/> by using <see cref="P:General.Collections.ComparableCollectionBase`1.ComparisonRule"/>
+            </summary>
+            <param name="listOfT"></param>
+            <returns>true/fasle</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.Add(`0)">
+            <summary>
+            Adds a new item of <typeparamref name="T"/> to the corrent collection.
+            </summary>
+            <param name="item"></param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.Clear">
+            <summary>
+            Clears the current collection.
+            </summary>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.Contains(`0)">
+            <summary>
+            Indicates if the corrent collection has <paramref name="item"/>.
+            </summary>
+            <param name="item"></param>
+            <returns>true/false</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies items of the corrent collection to <paramref name="array"/> starting at this index: <paramref name="arrayIndex"/>
+            </summary>
+            <param name="array"></param>
+            <param name="arrayIndex"></param>
+            <returns>Nothing.</returns>
+        </member>
+        <member name="P:General.Collections.ComparableCollectionBase`1.Count">
+            <summary>
+            Counts items in the current collection.
+            </summary>
+        </member>
+        <member name="P:General.Collections.ComparableCollectionBase`1.IsReadOnly">
+            <summary>
+            Indicates if the collection is readonly.
+            </summary>
+            <value>Always false!</value>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.Remove(`0)">
+            <summary>
+            Removes an item from the collection.
+            </summary>
+            <param name="item">The object to remove from the current collection. The value can be null for reference types.</param>
+            <returns>true if item is successfully removed; otherwise, false. This method also returns false if item was not found in the collection.</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the List&lt;<typeparamref name="T"/>&gt;.
+            </summary>
+            <returns>A List&lt;<typeparamref name="T"/>&gt;.Enumerator for the List&lt;<typeparamref name="T"/>&gt;.</returns>
+        </member>
+        <member name="M:General.Collections.ComparableCollectionBase`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the List&lt;<typeparamref name="T"/>&gt;.
+            Implementation for <see cref="T:System.Collections.IEnumerable"/>.
+            </summary>
+            <returns>A List&lt;<typeparamref name="T"/>&gt;.Enumerator for the List&lt;<typeparamref name="T"/>&gt;.</returns>
+        </member>
+        <member name="T:General.Collections.ComparisonRule">
+            <summary>
+            Specifies different comparison rule for comparing two lists.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.NoneOf">
+            <summary>
+            Lists have no item in common.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.ExactlyTheSame">
+            <summary>
+            Lists have exactly the same items.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.AllOf">
+            <summary>
+            First list contains all of the items of the second list.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.AnyOf">
+            <summary>
+            First list cotains at list one item that the second list also has it.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.ExactlyXof">
+            <summary>
+            First list contains exactly X items of the second list. 
+            X is defined in <see cref="T:General.Collections.ComparableCollectionBase`1"/>.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.MoreThanXof">
+            <summary>
+            First list contains more than X items of the second list. 
+            X is defined in <see cref="T:General.Collections.ComparableCollectionBase`1"/>.
+            </summary>
+        </member>
+        <member name="F:General.Collections.ComparisonRule.LessThanXof">
+            <summary>
+            First list contains less than X items of the second list. 
+            X is defined in <see cref="T:General.Collections.ComparableCollectionBase`1"/>.
+            </summary>
+        </member>
+        <member name="T:General.Collections.IComparableCollection`1">
+            <summary>
+            Defines necessary members for an inherited ComparableCollection class.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:General.Collections.IComparableCollection`1.Item(System.Int32)">
+            <summary>
+            Indexes an object of <typeparamref name="T"/> in the current collection.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:General.Collections.IComparableCollection`1.Has(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Indicates if the current collection contains <paramref name="listOfT"/> by using <see cref="T:General.Collections.ComparisonRule"/>
+            </summary>
+            <param name="listOfT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:General.Collections.IComparableCollection`1.BelongsTo(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Indicates if the current collection contains <paramref name="listOfT"/> by using <see cref="T:General.Collections.ComparisonRule"/>
+            </summary>
+            <param name="listOfT"></param>
+            <returns></returns>
+        </member>
+        <member name="T:General.Collections.IComparisonData">
+            <summary>
+            Defines necessary members for any inherited class from <see cref="T:General.Collections.IComparisonData"/>.
+            </summary>
+        </member>
+        <member name="P:General.Collections.IComparisonData.ComparisonRule">
+            <summary>
+            Gets or sets Comparison Rule.
+            </summary>
+        </member>
+        <member name="P:General.Collections.IComparisonData.X">
+            <summary>
+            Gets or sets a number which might be used by <see cref="P:General.Collections.IComparisonData.ComparisonRule"/>.
+            </summary>
+        </member>
+        <member name="T:General.CommonServiceProvider">
+            <summary>
+            Default implementation of <see cref="T:General.ICommonServiceProvider"/> to contain and provide services for the Common Library.
+            </summary>
+        </member>
+        <member name="M:General.CommonServiceProvider.AddOrReplace``1(System.Object)">
+            <summary>
+            Adds or replaces a service for a type.
+            </summary>
+            <typeparam name="T">The type that would be asked to be resolved.</typeparam>
+            <param name="service">The response object when code asks for resolving <typeparamref name="T"/>.</param>
+        </member>
+        <member name="M:General.CommonServiceProvider.AddOrReplace``1(System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            Adds or replaces a list of services for a type.
+            </summary>
+            <typeparam name="T">The type that would be asked to be resolved.</typeparam>
+            <param name="services">>The response list of objects when code asks for resolving <typeparamref name="T"/>.</param>
+        </member>
+        <member name="T:General.ServiceNotFoundException">
+            <summary>
+            Defines an exception thrown when there is no service for the requested type.
+            </summary>
+        </member>
+        <member name="P:General.ServiceNotFoundException.ServiceType">
+            <summary>
+            The type that there is no service available for it.
+            </summary>
+        </member>
+        <member name="M:General.ServiceNotFoundException.#ctor(System.Type)">
+            <summary>
+            Initializes a new <see cref="T:General.ServiceNotFoundException"/>.
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="T:General.Configuration.AssemblyAsGlobalSettingRepository">
+            <summary>
+            Implementation for <see cref="T:General.Configuration.IGlobalSettingRepository"/> to get some of the Globall Settings from an assembly.
+            </summary>
+        </member>
+        <member name="T:General.Configuration.BadAppSettingException">
+            <summary>
+            Exception when the value of an appSetting in Web.config (or App.config) cannot be converted to a desired type.
+            </summary>
+        </member>
+        <member name="P:General.Configuration.BadAppSettingException.Key">
+            <summary>
+            Gets the key for the application setting.
+            </summary>
+        </member>
+        <member name="P:General.Configuration.BadAppSettingException.Value">
+            <summary>
+            Gets the value of the application setting.
+            </summary>
+        </member>
+        <member name="P:General.Configuration.BadAppSettingException.ExpectedType">
+            <summary>
+            Gets the expected type for the application setting.
+            </summary>
+        </member>
+        <member name="M:General.Configuration.BadAppSettingException.#ctor(System.String,System.Object,System.Type,System.Exception)">
+            <summary>
+            Initializes a new instance of <see cref="T:General.Configuration.BadAppSettingException"/>.
+            </summary>
+            <param name="applicationSettingKeyName"></param>
+            <param name="appSettingValue"></param>
+            <param name="type"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:General.Configuration.ConfigFileAsGlobalSettingRepository.Get">
+            <summary>
+            Gets the value showing if <see cref="T:General.Configuration.GlobalSetting"/>.FriendlyCompanyName is expected as the prefix for appSetting's key.
+            </summary>
+        </member>
+        <member name="T:General.Configuration.GlobalSetting">
+            <summary>
+            Encapsulates static properties to prived global application settings.
+            </summary>
+            <remarks>
+            For initializing members of this class, call <see cref="T:General.Configuration.GlobalSetting"/>.Initialize() method at the starting point of the application (such as Application_Start() method inside Global.asax.cs file).
+            </remarks>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.CompanyName">
+            <summary>
+            Gets the name of your company.
+            </summary>
+            <value>The name of your company.</value>
+            <remarks>
+            CompanyName can be set in 2 ways:
+              1- Adding "CompanyName" key/value to the {appSettings} section of Web.config or App.config of your application;
+              2- Setting [assembly: AssemblyCompany("Company Name")] in AssemblyInfo.cs.
+            </remarks>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.ApplicationName">
+            <summary>
+            Gets the name of the current running application.
+            </summary>
+            <value>The name of the current running application.</value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.Version">
+            <summary>
+            Gets version of the current application.
+            </summary>
+            <value>
+            The version of the current application.
+            </value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.VersionString">
+            <summary>
+            Gets version of the current application in string.
+            </summary>
+            <value>
+            The version of the current application in string.
+            </value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.LogLevel">
+            <summary>
+            Gets the global log level
+            </summary>
+            <value>AES Key</value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.Recaptcha2Enable">
+            <summary>
+            Gets Google Recaptcha base URL.
+            </summary>
+            <value>Google Recaptcha base URL</value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.Recaptcha2Url">
+            <summary>
+            Gets Google Recaptcha base URL.
+            </summary>
+            <value>Google Recaptcha base URL</value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.Recaptcha2PublicKey">
+            <summary>
+            Gets Google Recaptcha Public Key.
+            </summary>
+            <value>Google Recaptcha Public Key</value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.Recaptcha2PrivateKey">
+            <summary>
+            Gets Google Recaptcha Private Key.
+            </summary>
+            <value>Google Recaptcha Private Key</value>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.MemoryCacheAbsoluteExpiration">
+            <summary>
+            Gets global number of seconds that for absolute expiration of memory cache.
+            </summary>
+            <value>Global number of seconds that for absolute expiration of memory cache.</value>
+            <remarks>
+            Developer can override this value for an specific cache or globalle. <see cref="T:General.MemoryCacheManager`1"/>
+            </remarks>
+        </member>
+        <member name="P:General.Configuration.GlobalSetting.AesKey">
+            <summary>
+            Gets AES Key for <see cref="T:General.Cryptography.AES"/> Cryptography.
+            </summary>
+            <value>AES Key</value>
+        </member>
+        <member name="T:General.Configuration.GlobalSettingReinitializeException">
+            <summary>
+            Exception if <see cref="!:GlobalSettingBase"/>.Initialize() method call for the second time.
+            </summary>
+        </member>
+        <member name="T:General.Configuration.MissingAppSettingException">
+            <summary>
+            Exception for a missing appSetting.
+            </summary>
+        </member>
+        <member name="M:General.Configuration.MissingAppSettingException.#ctor(System.String,System.String)">
+            <summary>
+            Constructor of MissingAppSettingException. 
+            </summary>
+            <param name="missingElement">Title of the missing element. E.g. "Application Name".</param>
+            <param name="key">key that is missing from Web.config or App.config.</param>
+        </member>
+        <member name="T:General.Cryptography.AES">
+            <summary>
+            Encapsulates members to faciliates AES encryption and decryption.
+            </summary>
+        </member>
+        <member name="P:General.Cryptography.AES.Key">
+            <summary>
+            Gets or sets a key for AES.
+            </summary>
+            <value>Key for AES.</value>
+        </member>
+        <member name="F:General.Cryptography.AES.DEFAULT_IV_SPLITTER">
+            <summary>
+            Gets default AES vector splitter.
+            </summary>
+            <value>AES vector splitter.</value>
+        </member>
+        <member name="M:General.Cryptography.AES.#ctor(System.Byte[])">
+            <summary>
+            Creates a new instance of <see cref="T:General.Cryptography.AES"/>
+            </summary>
+            <param name="key">AES key</param>
+        </member>
+        <member name="M:General.Cryptography.AES.ValidateKey(System.Byte[])">
+            <summary>
+            Validates AES key.
+            </summary>
+            <param name="key">AES key.</param>
+        </member>
+        <member name="M:General.Cryptography.AES.EncryptToString(System.String,System.Byte[]@)">
+            <summary>
+            Encrypts <paramref name="plainText"/> and returns a string suitable for passing in a URL.
+            </summary>
+            <param name="plainText">Text to be encrypted.</param>
+            <param name="vector">Generated AES vector.</param>
+            <returns>Encrypted text.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.EncryptToString(System.String,System.String@)">
+            <summary>
+            Encrypts <paramref name="plainText"/> and returns a string suitable for passing in a URL.
+            </summary>
+            <param name="plainText">Text to be encrypted.</param>
+            <param name="vector">Generated AES vector.</param>
+            <returns>Encrypted text.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.EncryptToString(System.String,System.Char)">
+            <summary>
+            Encrypts <paramref name="plainText"/> and adds vector(IV) at the beginnig of result, using <paramref name="splitter"/> as the separator.
+            </summary>
+            <param name="plainText">Text to be encrypted.</param>
+            <param name="splitter">The character that separate encrypted text and vector(IV).</param>
+            <returns>Encrypted text.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.Encrypt(System.String,System.Byte[]@)">
+            <summary>
+            Encrypts <paramref name="plainText"/> and returns an encrypted byte array.
+            </summary>
+            <param name="plainText">Text to be encrypted.</param>
+            <param name="vector">The generated IV which is used to encrypt <paramref name="plainText"/> and generate the result.</param>
+            <returns>Encrypted byte array.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.Decrypt(System.String,System.Char)">
+            <summary>
+            Decrypts <paramref name="cipherText"/> to plain text.
+            The method assumes that <paramref name="cipherText"/> is in this format: {vector string}{splitter char}{cipherText}
+            Sample: 193017219101214006208145014084217162137012222209:949389489834798704520978127843987470834087943609430879843790843
+            </summary>
+            <param name="cipherText">Encrypted text.</param>
+            <param name="splitter">Separator character.</param>
+            <returns>Plain text.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts <paramref name="cipherText"/>.
+            </summary>
+            <param name="cipherText">Encrypted text.</param>
+            <param name="vector">AES vector(IV).</param>
+            <returns>Plain text.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.Decrypt(System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts <paramref name="cipherBytes"/> by using <see cref="P:General.Cryptography.AES.Key"/> and <paramref name="vector"/>.
+            </summary>
+            <param name="cipherBytes">Encrypted data in byte array.</param>
+            <param name="vector">AES vector(IV) in byte array.</param>
+            <returns>Plain text.</returns>
+        </member>
+        <member name="M:General.Cryptography.AES.TryDecrypt(System.String,System.String@,System.Char)">
+            <summary>
+            Tries to decrypt <paramref name="cipherText"/>.
+            The method assumes that <paramref name="cipherText"/> is in this format: {vector string}{splitter char}{cipherText}
+            Sample: 193017219101214006208145014084217162137012222209:949389489834798704520978127843987470834087943609430879843790843
+            </summary>
+            <param name="cipherText">Encrypted text.</param>
+            <param name="plainText">Plain text result of decryption.</param>
+            <param name="splitter">Separator character.</param>
+            <returns>True if succeed; otherwise, false.</returns>
+        </member>
+        <member name="T:General.Cryptography.DecryptionException">
+            <summary>
+            Decryption Exception.
+            </summary>
+        </member>
+        <member name="M:General.Cryptography.DecryptionException.#ctor(System.Byte[],System.Byte[],System.Exception)">
+            <summary>
+            Initializes a new instance of <see cref="T:General.Cryptography.DecryptionException"/>.
+            </summary>
+            <param name="cipherBytes"></param>
+            <param name="vector"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:General.Cryptography.DecryptionException.BuildErrorMessage(System.Byte[],System.Byte[])">
+            <summary>
+            Builds the error message.
+            </summary>
+            <param name="cipherBytes"></param>
+            <param name="vector"></param>
+            <returns>Error message</returns>
+        </member>
+        <member name="T:General.ExceptionMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.BadAppSettingException">
+            <summary>
+              Looks up a localized string similar to The value of appSetting &apos;{0}&apos; is &apos;{1}&apos; which cannot be converted to the type &apos;{2}&apos;..
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.CompanyNameMissingException">
+            <summary>
+              Looks up a localized string similar to Company Name cannot be found. Either add the company name to the [assembly: AssemblyCompany(&quot;&quot;)] attribute of AssemblyInfo.cs or add a new item to the &lt;appSettings&gt; node of Web.config (or App.config) with this key: &quot;{0}&quot;..
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.EmptyCollectionException">
+            <summary>
+              Looks up a localized string similar to EmptyCollectionException.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.GlobalSettingReinitializeException">
+            <summary>
+              Looks up a localized string similar to GlobalSetting cannot be re-initialized. Call &lt;see cref=&quot;GlobalSetting&quot;/&gt;.Initialize() method only one time at the starting point of the application (E.g. Application_Start() method inside Global.asax.cs file)..
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.MissingAppSettingException">
+             <summary>
+               Looks up a localized string similar to &quot;{0}&quot; is not defined in the Application Setting collection. 
+            Add &quot;{1}&quot; to &lt;appSettings&gt; node of the application Web.config or App.config..
+             </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.MoreThanOneObjectFoundException">
+            <summary>
+              Looks up a localized string similar to MoreThanOneObjectFoundException.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.NotRightTypeValidationError">
+            <summary>
+              Looks up a localized string similar to Not a right type..
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.ObjectNotFoundException">
+            <summary>
+              Looks up a localized string similar to ObjectNotFoundException.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.OutOfRangeException">
+            <summary>
+              Looks up a localized string similar to OutOfRangeException.
+            </summary>
+        </member>
+        <member name="P:General.ExceptionMessages.XmlTransformationException">
+            <summary>
+              Looks up a localized string similar to XmlTransformationException.
+            </summary>
+        </member>
+        <member name="T:General.Extensions.ArrayExtensions">
+            <summary>
+            Encapsulates extentions methods for <see cref="T:System.Array"/> class.
+            </summary>
+        </member>
+        <member name="M:General.Extensions.ArrayExtensions.ToArray``1(System.Array)">
+            <summary>
+            Converts this <paramref name="array"/> to <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">Type of arrya.</typeparam>
+            <param name="array"></param>
+            <returns>Array.</returns>
+        </member>
+        <member name="M:General.Extensions.ArrayExtensions.ToArrayOf``1(System.Array)">
+            <summary>
+            Converts this <paramref name="array"/> to array of <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">Type of arrya.</typeparam>
+            <param name="array"></param>
+            <returns>Array of type <typeparamref name="T"/></returns>
+        </member>
+        <member name="T:General.Extensions.DataSetExtensions">
+            <summary>
+            Contains extension methods for the <see cref="T:System.Data.DataSet"/> type.
+            </summary>
+        </member>
+        <member name="M:General.Extensions.DataSetExtensions.GetXmlIncludingNull(System.Data.DataSet)">
+            <summary>
+            Gets XML string of this <see cref="T:System.Data.DataSet"/> including cells with <c>null</c> value in the first row.
+            </summary>
+            <param name="thisDataSet">Current DataSet.</param>
+            <returns>A XML string including cells with <c>null</c> value in the first row.</returns>
+        </member>
+        <member name="T:General.Extensions.DataTableExtension">
+            <summary>
+            Contains extension methods to work on entities.
+            </summary>
+        </member>
+        <member name="M:General.Extensions.DataTableExtension.ConvertRowsToList``1(System.Data.DataTable,System.Converter{System.Data.DataRow,``0})">
+            <summary>
+            Converts all <see cref="P:System.Data.DataTable.Rows"/> of a <see cref="T:System.Data.DataTable"/> to a List of <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="dataTable"></param>
+            <param name="conversion"></param>
+            <returns>A list of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="T:General.Extensions.DateTimeExtensions">
+            <summary>
+            An static class to contain DateTime extension methods.
+            </summary>
+        </member>
+        <member name="T:General.Extensions.IEnumerableExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:General.Extensions.IEnumerableExtensions.Has``1(System.Collections.Generic.IEnumerable{``0},General.Collections.ComparisonRule,System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="thisListOfT"></param>
+            <param name="comparingRule"></param>
+            <param name="listOfT"></param>
+            <param name="X"></param>
+            <returns></returns>
+        </member>
+        <member name="M:General.Extensions.IEnumerableExtensions.BelongsTo``1(System.Collections.Generic.IEnumerable{``0},General.Collections.ComparisonRule,System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="thisListOfT"></param>
+            <param name="comparingRule"></param>
+            <param name="listOfT"></param>
+            <param name="X"></param>
+            <returns></returns>
+        </member>
+        <member name="M:General.Extensions.IEnumerableExtensions.CounEqualItems``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="thisListOfT"></param>
+            <param name="listOfT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:General.Extensions.IEnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Executes an <paramref name="action"/> on each of <paramref name="source"/>'s items.
+            </summary>
+            <typeparam name="T">Type</typeparam>
+            <param name="source">Any IEnumerable{T}.</param>
+            <param name="action">An action to be executed on each item of <paramref name="source"/>.</param>
+        </member>
+        <member name="T:General.Extensions.ObjectExtensions">
+            <summary>
+            Encapsulates extentions methods for <see cref="T:System.Object"/> class.
+            </summary>
+        </member>
+        <member name="M:General.Extensions.ObjectExtensions.To``1(System.Object)">
+            <summary>
+            An extension method to convert this <see cref="T:System.Object"/> to an instance of <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type to convert to.</typeparam>
+            <param name="obj">This object.</param>
+            <returns>An instance of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="T:General.Extensions.StringExtensions">
+            <summary>
+            An static class to contain String extension methods.
+            </summary>
+        </member>
+        <member name="M:General.Extensions.StringExtensions.ToValidFileName(System.String)">
+            <summary>
+            Returns a valid file name string of this string.
+            It doesn't change the current string value.
+            </summary>
+            <param name="str">This string.</param>
+            <returns>A valid file name string.</returns>
+        </member>
+        <member name="M:General.Extensions.StringExtensions.AllIndexesOf(System.String,System.String)">
+            <summary>
+            Returns a list of all positions of <paramref name="value"/> inside this string <paramref name="str"/>.
+            </summary>
+            <param name="str">This string.</param>
+            <param name="value">A string.</param>
+            <returns>List of all positions of <paramref name="value"/> inside this string <paramref name="str"/>.</returns>
+        </member>
+        <member name="M:General.Extensions.StringExtensions.TrimSpacesAndDoubleQuotes(System.String)">
+            <summary>
+            Removes all leading and trailing white-space characters from the <paramref name="str"/>.
+            </summary>
+            <param name="str">A string.</param>
+            <returns>Cleaned up string.</returns>
+        </member>
+        <member name="T:General.Extensions.TypeExtensions">
+            <summary>
+            Encapsulates extentions methods for <see cref="T:System.Type"/> class.
+            </summary>
+        </member>
+        <member name="M:General.Extensions.TypeExtensions.GetEnumerableType(System.Type)">
+            <summary>
+            Returns the Type of T, if <paramref name="type"/> is of type <see cref="T:System.Collections.Generic.IEnumerable`1"/>; otherwise, returns null.
+            </summary>
+            <param name="type">Any type that inherits from <see cref="T:System.Collections.Generic.IEnumerable`1"/> inteface.</param>
+            <returns>The Type of T, if <paramref name="type"/> is of type <see cref="T:System.Collections.Generic.IEnumerable`1"/>; otherwise, returns null.</returns>
+            <remarks>
+            Got it from: http://stackoverflow.com/a/1846690/538387
+            </remarks>
+        </member>
+        <member name="M:General.Helpers.AppSettingsHelper.Get``1(System.String)">
+            <summary>
+            Returns the value of an appSetting (<paramref name="appSettingKey"/>).
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="appSettingKey"></param>
+            <returns></returns>
+            <exception cref="T:General.Configuration.MissingAppSettingException">thrown if <paramref name="appSettingKey"/> cannot be found in the Web.config (or App.config).</exception>
+        </member>
+        <member name="M:General.Helpers.AppSettingsHelper.Get``1(System.String,System.Object)">
+            <summary>
+            Returns the value of an appSetting (<paramref name="appSettingKey"/>) if it exist; if not, returns <paramref name="defaultValue"/>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="appSettingKey">Key of appSetting</param>
+            <param name="defaultValue">value to return if <paramref name="appSettingKey"/> does not exist in application settings collection.</param>
+            <returns>The value of an appSetting if it exist; if not, returns <paramref name="defaultValue"/>.</returns>
+        </member>
+        <member name="T:General.Helpers.Base64Helper">
+            <summary>
+            An static class to facilitate encoding/decoding to/from Base64.
+            </summary>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.EncodeToBase64(System.String)">
+            <summary>
+            Returns a Base64 encoded string from <paramref name="toEncode"/> using default text encoding (<see cref="P:System.Text.Encoding.Default"/>).
+            </summary>
+            <param name="toEncode">A string for encoding.</param>
+            <returns>A base64 encoded string.</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.EncodeToBase64(System.String,System.Text.Encoding)">
+            <summary>
+            Returns a Base64 encoded string from <paramref name="toEncode"/> using <paramref name="encoding"/> text encoding.
+            </summary>
+            <param name="toEncode">A string for encoding.</param>
+            <param name="encoding">A <see cref="T:System.Text.Encoding"/>class to do the encoding.</param>
+            <returns>A base64 encoded string.</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.EncodeToBase64(System.String,System.String)">
+            <summary>
+            Returns a Base64 encoded string of <paramref name="username"/> and <paramref name="password"/> using default text encoding (<see cref="P:System.Text.Encoding.Default"/>).
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <remarks>Return value is usually used for Authorization field of HTTP request header.</remarks>
+            <returns>A base64 encoded string.</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.EncodeToBase64(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Returns a Base64 encoded string of <paramref name="username"/> and <paramref name="password"/> using <paramref name="encoding"/> text encoding.
+            Return value is usually used for Authorization field of HTTP request header.
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <param name="encoding">A <see cref="T:System.Text.Encoding"/>class to do the encoding.</param>
+            <returns>A base64 encoded string.</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.DecodeFromBase64(System.String)">
+            <summary>
+            Returns a dencoded string from <paramref name="encodedData"/> using default text encoding (<see cref="P:System.Text.Encoding.Default"/>).
+            </summary>
+            <param name="encodedData">A base 64 encoded string.</param>
+            <returns>A string which is decoded from <paramref name="encodedData"/>.</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.DecodeFromBase64(System.String,System.Text.Encoding)">
+            <summary>
+            Returns a dencoded string from <paramref name="encodedData"/> using <paramref name="encoding"/> text encoding.
+            </summary>
+            <param name="encodedData">A base 64 encoded string.</param>
+            <param name="encoding">A <see cref="T:System.Text.Encoding"/>class to do the encoding.</param>
+            <returns>A string which is decoded from <paramref name="encodedData"/>.</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.ExtractUsernamePasswordFromBase64(System.String,System.String@,System.String@)">
+            <summary>
+            Extracts username and password from a base64 encoded string using default text encoding (<see cref="P:System.Text.Encoding.Default"/>).
+            </summary>
+            <param name="encodedData">A base 64 encoded string.</param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <remarks>
+            If HttpRequestHeaders.Authorization.Parameter is passed as <paramref name="encodedData"/>, decoded username and password would be sent out in <paramref name="username"/> and <paramref name="password"/> respectively.
+            </remarks>        
+        </member>
+        <member name="M:General.Helpers.Base64Helper.ExtractUsernamePasswordFromBase64(System.String,System.Text.Encoding,System.String@,System.String@)">
+            <summary>
+            Extracts username and password from a base64 encoded string using <paramref name="encoding"/> text encoding.
+            </summary>
+            <param name="encodedData">A base 64 encoded string.</param>
+            <param name="encoding">A <see cref="T:System.Text.Encoding"/>class to do the encoding.</param>
+            <param name="username"></param>
+            <param name="password"></param>
+            <remarks>
+            If HttpRequestHeaders.Authorization.Parameter is passed as <paramref name="encodedData"/>, decoded username and password would be sent out in <paramref name="username"/> and <paramref name="password"/> respectively.
+            </remarks>        
+        </member>
+        <member name="M:General.Helpers.Base64Helper.EncodeToBase64UrlSafe(System.Byte[])">
+            <summary>
+             Base 64 Encoding with URL and Filename Safe Alphabet using UTF-8 character set.
+            </summary>
+            <param name="encBuff">The origianl array of byte.</param>
+            <returns>The Base64 encoded string</returns>
+        </member>
+        <member name="M:General.Helpers.Base64Helper.DecodeFromBase64UrlSafe(System.String)">
+            <summary>
+             Decode Base64 encoded string with URL and Filename Safe Alphabet using UTF-8.
+            </summary>
+            <param name="str">Base64 code</param>
+            <returns>The decoded string.</returns>
+        </member>
+        <member name="T:General.Helpers.CsvHelper">
+            <summary>
+            Encapsulates functions in a static class to work with comma-separated values (CSV).
+            </summary>
+        </member>
+        <member name="M:General.Helpers.CsvHelper.ReadAll(System.String)">
+            <summary>
+            Reads all the lines of a CSV string and reaturns all of data in a list of string array.
+            </summary>
+            <param name="csvText">A string cotains comma-separated values (CSV), one line or multi lines.</param>
+            <returns>List of arrays of string.</returns>
+        </member>
+        <member name="M:General.Helpers.CsvHelper.ReadLine(System.String)">
+            <summary>
+            Reads a line of a comma-separated values (CSV) and an array of string, each item holds a value, respectively.
+            </summary>
+            <param name="csvLine"></param>
+            <returns>Arry of string.</returns>
+        </member>
+        <member name="T:General.Helpers.EnumHelper">
+            <summary>
+            Contains static Enum helper methods.
+            </summary>
+        </member>
+        <member name="M:General.Helpers.EnumHelper.Parse``1(System.Object)">
+            <summary>
+            Converts passed <paramref name="value"/> (either string or integer) to a value of type <typeparamref name="TEnum"/>.
+            <typeparamref name="TEnum"/> must be an enumerator. <paramref name="value"/> can be:
+             - A string value equal to one of the <typeparamref name="TEnum"/>'s item (e.g. "Sunday" or "sUndAy" while <typeparamref name="TEnum"/> is <see cref="T:System.DayOfWeek"/>, returns DayOfWeek.Sunday).
+             - An integer value equal to one of the <typeparamref name="TEnum"/>'s item (e.g. 0 while <typeparamref name="TEnum"/> is <see cref="T:System.DayOfWeek"/>, returns DayOfWeek.Sunday).
+             - A comma separated string value, if <typeparamref name="TEnum"/> is decorated by <see cref="T:System.FlagsAttribute"/> (e.g. "None, RemoveEmptyEntries" or "noNE,removeemptyentries" while <typeparamref name="TEnum"/> is <see cref="T:System.StringSplitOptions"/>, returns StringSplitOptions.None|StringSplitOptions.RemoveEmptyEntries)
+            </summary>
+            <typeparam name="TEnum">An enum type.</typeparam>
+            <param name="value">A string or integer value which has to convert to one of <typeparamref name="TEnum"/>'s item.</param>
+            <returns>Equivalent <typeparamref name="TEnum"/> item for <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:General.Helpers.EnumHelper.TryParse``1(System.Object,``0)">
+            <summary>
+            Tries to convert passed <paramref name="value"/> (either string or integer) to a value of type <typeparamref name="TEnum"/>.
+            If the try fails, it returens given <paramref name="defaultValue"/>.
+            <typeparamref name="TEnum"/> must be an enumerator. <paramref name="value"/> can be:
+             - A string value equal to one of the <typeparamref name="TEnum"/>'s item (e.g. "Sunday" or "sUndAy" while <typeparamref name="TEnum"/> is <see cref="T:System.DayOfWeek"/>, returns DayOfWeek.Sunday).
+             - An integer value equal to one of the <typeparamref name="TEnum"/>'s item (e.g. 0 while <typeparamref name="TEnum"/> is <see cref="T:System.DayOfWeek"/>, returns DayOfWeek.Sunday).
+             - A comma separated string value, if <typeparamref name="TEnum"/> is decorated by <see cref="T:System.FlagsAttribute"/> (e.g. "None, RemoveEmptyEntries" or "noNE,removeemptyentries" while <typeparamref name="TEnum"/> is <see cref="T:System.StringSplitOptions"/>, returns StringSplitOptions.None|StringSplitOptions.RemoveEmptyEntries)
+            </summary>
+            <typeparam name="TEnum">An enum type.</typeparam>
+            <param name="value">A string or integer value which has to convert to one of <typeparamref name="TEnum"/>'s item.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>Equivalent <typeparamref name="TEnum"/> item for <paramref name="value"/>.</returns>
+        </member>
+        <member name="M:General.Helpers.EnumHelper.TryParse(System.Object,System.Type)">
+            <summary>
+            Tries to parse <paramref name="value"/> to a valid member of enum <paramref name="enumType"/>.
+            </summary>
+            <returns>A valid member of enum <paramref name="enumType"/>.</returns>
+        </member>
+        <member name="T:General.Helpers.MailHelper">
+            <summary>
+            Encapsulates helpful functions for working with e-mails.
+            </summary>
+        </member>
+        <member name="M:General.Helpers.MailHelper.SendEmail(System.String,System.String,System.String)">
+            <summary>
+            Sends an e-mail.
+            </summary>
+            <param name="toAddress"></param>
+            <param name="subject"></param>
+            <param name="messageBody"></param>
+        </member>
+        <member name="M:General.Helpers.MailHelper.Send(System.Net.Mail.MailMessage)">
+            <summary>
+            Sends an e-mail.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:General.Helpers.StringHelper">
+            <summary>
+            Encapsulates extention methods for <see cref="T:System.String"/> type.
+            </summary>
+        </member>
+        <member name="M:General.Helpers.StringHelper.StringToByteArray(System.String,System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <param name="splitter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:General.Helpers.StringHelper.ByteArrayToString(System.Byte[])">
+            <summary>
+            Converts a byte array to a string.
+            <seealso cref="M:General.Helpers.StringHelper.StringToByteArray(System.String,System.Char)"/>
+            Same comment as StrToByteArray(string).  Normally the conversion would use an ASCII encoding in the other direction:
+                 System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
+                 return enc.GetString(byteArr);
+            </summary>
+            <param name="byteArr">An array of bytes.</param>
+            <returns>string</returns>
+        </member>
+        <member name="M:General.Helpers.StringHelper.SplitInParts(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <param name="partLength"></param>
+            <returns></returns>
+        </member>
+        <member name="T:General.Helpers.XmlHelper">
+            <summary>
+            Encapsulates functions for helping work with XML data.
+            </summary>
+        </member>
+        <member name="M:General.Helpers.XmlHelper.Transform(System.String,System.String)">
+            <summary>
+            Transforms and returns an XML (<paramref name="xmlString"/>) by using an XSLT file from <paramref name="xsltPath"/>.
+            </summary>
+            <returns>Transformed XML string.</returns>
+            <remarks>
+            For more information about XML Transformation, read:
+              - http://www.w3.org/TR/xslt
+              - http://www.w3schools.com/xsl
+              - http://msdn.microsoft.com/en-us/library/ms256069(v=vs.100).aspx
+              - http://forums.asp.net/t/1256636.aspx?Generating+HTML+Reports+in+C+with+XML+Data+
+            </remarks>
+        </member>
+        <member name="T:General.Helpers.XmlTransformationException">
+            <summary>
+            Xml Transformation Exception.
+            </summary>
+        </member>
+        <member name="M:General.Helpers.XmlTransformationException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of <see cref="T:General.Helpers.XmlTransformationException"/>
+            </summary>
+            <param name="xmlString">XML in string format.</param>
+            <param name="xsltPath">Physical path to XSLT file.</param>
+            <param name="innerException">Inner exception, is exists.</param>
+        </member>
+        <member name="M:General.Helpers.XmlTransformationException.BuildErrorMessage(System.String,System.String)">
+            <summary>
+            Builds and returns exception message for an <see cref="T:General.Helpers.XmlTransformationException"/> instance.
+            </summary>
+            <param name="xmlString">XML in string format.</param>
+            <param name="xsltPath">Physical path to XSLT file.</param>
+            <returns>Exception message for an <see cref="T:General.Helpers.XmlTransformationException"/> instance.</returns>
+        </member>
+        <member name="M:General.ICommonServiceProvider.GetService``1">
+            <summary>
+            Gets the service object of the specified type.
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <returns>A service object of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:General.ICommonServiceProvider.GetServices(System.Type)">
+            <summary>
+            Gets the list of service objects of the specified type. 
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>A list of service object of type <paramref name="serviceType"/>.</returns>
+        </member>
+        <member name="M:General.ICommonServiceProvider.GetServices``1">
+            <summary>
+            Gets the list of service objects of the specified type. 
+            </summary>
+            <typeparam name="T">The type of service object to get.</typeparam>
+            <returns>A list of service objects of <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="P:General.LogManagement.CommonLogger.AutomaticallyDisabled">
+            <summary>
+            Gets if Log Manager is automatically disabled.
+            </summary>
+            <value>True if automatically disabled, otherwise false.</value>
+        </member>
+        <member name="M:General.LogManagement.CommonLogger.SaveLog(General.LogManagement.LogEntry)">
+            <summary>
+            Save log to the target logging repository.
+            </summary>
+            <param name="logEntry"></param>
+        </member>
+        <member name="M:General.LogManagement.CommonLogger.SkipLoggin(General.LogManagement.LogLevel)">
+            <summary>
+            Returns if it should skip Logging.
+            </summary>
+            <param name="logLevel"></param>
+            <returns>True if should skip logging, otherwise false</returns>
+        </member>
+        <member name="M:General.LogManagement.ICommonLogger.Log(General.LogManagement.LogLevel,System.Exception,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Logs an event to the log repository.
+            </summary>
+            <param name="logLevel"></param>
+            <param name="exception"></param>
+            <param name="message"></param>
+            <param name="methodName"></param>
+            <param name="className"></param>
+            <param name="stackFrameIndex"></param>
+        </member>
+        <member name="T:General.LogManagement.LogEntry">
+            <summary>
+            Encapsoluate a log entry members.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.LogID">
+            <summary>
+            Gets Unique ID of the logEntry
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.Level">
+            <summary>
+            Severity level of the log.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.Date">
+            <summary>
+            Gets or sets the date the log is created.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.Message">
+            <summary>
+            Gets or sets text message of the log.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.Exception">
+            <summary>
+            Gets or sets ExceptionData, if an exception causes this log.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.StackTrace">
+            <summary>
+            Gets or sets the Stack Trace.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.MethodName">
+            <summary>
+            Gets or sets Method name, from there this log entry was created.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ClassName">
+            <summary>
+            Gets or sets Class name, from there this log entry was created.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ApplicationName">
+            <summary>
+            Gets or sets Application name, from there this log entry was created.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ApplicationVersion">
+            <summary>
+            Gets or sets version of the application/assembly.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.MachineName">
+            <summary>
+            Gets or sets name of the coputer or server.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.WindowsIdentity">
+            <summary>
+            Gets or sets Windows Identity.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadIdentity">
+            <summary>
+            Gets or sets Thread Identity.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ProcessID">
+            <summary>
+            Gets or sets Process ID.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.StackFrame">
+            <summary>
+            Gets or sets Stack Frame.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.Thread">
+            <summary>
+            Gets or sets ThreadData, containing part of Thread data when this log was created.
+            </summary>
+        </member>
+        <member name="M:General.LogManagement.LogEntry.#ctor">
+            <summary>
+            Default constructor of class.
+            </summary>
+        </member>
+        <member name="M:General.LogManagement.LogEntry.ToString">
+            <summary>
+            Returns a string that represents the current instance of <see cref="T:General.LogManagement.LogEntry"/>.
+            </summary>
+            <returns>A string that represents the current object.</returns>
+        </member>
+        <member name="T:General.LogManagement.LogEntry.ThreadData">
+            <summary>
+            Encapsulates some of a Thread data.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadData.ManagedThreadId">
+            <summary>
+            Gets or sets Thread ID of the Thread that this ThreadData is created based on.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadData.ThreadName">
+            <summary>
+            Gets or sets Thread Name of the Thread that this ThreadData is created based on.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadData.CurrentCulture">
+            <summary>
+            Gets or sets the culture of the Thread that this ThreadData is created based on.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadData.CurrentUICulture">
+            <summary>
+            Gets or sets UI Culture of the Thread that this ThreadData is created based on.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadData.Priority">
+            <summary>
+            Gets or sets Priority of the Thread that this ThreadData is created based on.
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogEntry.ThreadData.ThreadState">
+            <summary>
+            Gets or sets state of the Thread that this ThreadData is created based on.
+            </summary>
+        </member>
+        <member name="M:General.LogManagement.LogEntry.ThreadData.#ctor">
+            <summary>
+            Constructor of class.
+            </summary>
+        </member>
+        <member name="M:General.LogManagement.LogEntry.ThreadData.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:General.LogManagement.LogLevel">
+            <summary>
+            Level of a log entry.
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogLevel.Debug">
+            <summary>
+            Debugg Level Logging
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogLevel.Trace">
+            <summary>
+            Service Level Logging
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogLevel.Warning">
+            <summary>
+            Warning Level Logging
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogLevel.Info">
+            <summary>
+            Error Level Logging
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogLevel.Error">
+            <summary>
+            Page counter enumerator
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogLevel.Fatal">
+            <summary>
+            Fatal Level Logging
+            </summary>
+        </member>
+        <member name="T:General.LogManagement.LogManager">
+            <summary>
+            Encapsulates functionalities for logging.
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogManager._appName">
+            <summary>
+            The Application Name to be used for logging messages
+            </summary>
+        </member>
+        <member name="F:General.LogManagement.LogManager._isInitialized">
+            <summary>
+            Is LogManager ever Initialized?
+            </summary>
+        </member>
+        <member name="P:General.LogManagement.LogManager.AutomaticallyDisabled">
+            <summary>
+            Gets if Log Manager is automatically disabled.
+            </summary>
+            <value>True if automatically disabled, otherwise false.</value>
+        </member>
+        <member name="P:General.LogManagement.LogManager.IsInitialized">
+            <summary>
+            Gets if LogManager has already initialized.
+            </summary>
+        </member>
+        <member name="M:General.LogManagement.LogManager.Log(General.LogManagement.LogLevel,System.Exception,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Logs an event to the log repository.
+            </summary>
+            <param name="logLevel"></param>
+            <param name="exception"></param>
+            <param name="message"></param>
+            <param name="methodName"></param>
+            <param name="className"></param>
+            <param name="stackFrameIndex"></param>
+        </member>
+        <member name="M:General.LogManagement.LogManager.Initialize(General.LogManagement.ILoggingProxy)">
+            <summary>
+            Initializes the LogManager.
+            </summary>
+            <param name="loggingProxy">a logProxy object.</param>
+            <returns>True if succesfully initialized, otherwise false.</returns>
+        </member>
+        <member name="M:General.LogManagement.LogManager.Initialize(System.String,System.String,System.Collections.Generic.IEnumerable{General.LogManagement.ILoggingProxy})">
+            <summary>
+            Initializes the LogManager.
+            </summary>
+            <param name="applicationName">Name of current application.</param>
+            <param name="applicationVersion">Version of current application.</param>
+            <param name="loggingProxies">a list of logProxy objects.</param>
+            <returns>True if succesfully initialized, otherwise false.</returns>
+        </member>
+        <member name="M:General.LogManagement.LogManager.SaveLog(General.LogManagement.LogEntry)">
+            <summary>
+            Save log to the target logging repository.
+            </summary>
+            <param name="logEntry"></param>
+        </member>
+        <member name="M:General.LogManagement.LogManager.SkipLoggin(General.LogManagement.LogLevel)">
+            <summary>
+            Returns if it should skip Logging.
+            </summary>
+            <param name="logLevel"></param>
+            <returns>True if should skip logging, otherwise false</returns>
+        </member>
+        <member name="T:General.Manager">
+            <summary>
+            A singleton implementation to encapsulate necessary elements for the Common Library. 
+            </summary>
+        </member>
+        <member name="P:General.Manager.Instance">
+            <summary>
+            Gets the single and the only instance of the <see cref="T:General.Manager"/>.
+            </summary>
+        </member>
+        <member name="P:General.Manager.ServiceProvider">
+            <summary>
+            Gets or sets a Service Provider for the Common library.
+            </summary>
+            <value>
+            A Service Provider for the Common library.
+            </value>
+            <remarks>
+            Becareful if you want to set or make changes to this property. 
+            Many other classes and functions in the Common Library use this property to get the Service Provider.
+            </remarks>
+        </member>
+        <member name="P:General.Manager.GlobalSetting">
+            <summary>
+            Gets a container of global settings by calling <see cref="T:General.Manager"/>.Instance.ServiceProveder.Get(). 
+            </summary>
+            <value>
+            A container of global settings.
+            </value>
+            <remarks>
+            Becareful if you want to set or make changes to this property. 
+            Many other classes and functions in the Common Library use this property to get an initialized instance of <see cref="P:General.Manager.GlobalSetting"/>.
+            </remarks>
+        </member>
+        <member name="T:General.MemoryCacheManager`1">
+             <summary>
+             Encapsulates generic methods to implement in memory caching.
+             </summary>
+             <typeparam name="T"></typeparam>
+             <remarks>
+             To implement a customized cache for a specific entity, create a derived class from this class. For instance:
+             <code>
+                 public sealed class MyEntityMemoryCacheManager : MemoryCacheManager{MyEntity}
+                 {
+                     public static void Set(MyEntity entity, CacheItemPolicy policy)
+                     {
+                         // implementation
+                         // generate the key based on the entity
+                     }
+            
+                     public static void Get(long entityID, string revision) // Or any other parameters that make sense for MyEntity to recreate the "cache key"
+                     {
+                         // implementation
+                         // get the entity based on the parameters
+                     }
+                 }
+             </code>
+             </remarks>
+        </member>
+        <member name="F:General.MemoryCacheManager`1.DefaultGlobalAbsoluteExpiration">
+            <summary>
+            Gets or sets default global absolute expiration.
+            </summary>
+            <remarks>
+            If no policy pass to the GenericSet() methos, and the value of this field is not zero,
+            a new <see cref="T:System.Runtime.Caching.CacheItemPolicy"/> with AbsoluteExpiration equals to the value of this field will be assign to the cached entity.
+            </remarks>
+        </member>
+        <member name="M:General.MemoryCacheManager`1.GenericSet(`0,System.Runtime.Caching.CacheItemPolicy,System.Object[])">
+            <summary>
+            Saves <paramref name="entity"/> in the memory cache.
+            </summary>
+            <param name="entity">An instance of any entity to be cached in memory.</param>
+            <param name="policy">Cache policy</param>
+            <param name="keys">Values to be used for creating a unique cache key.</param>
+        </member>
+        <member name="M:General.MemoryCacheManager`1.GenericGet(System.Object[])">
+            <summary>
+            Gets chahed value for <paramref name="keys"/>, if there's any in the memory cache.
+            </summary>
+            <param name="keys">Values to be used for creating a unique cache key.</param>
+            <returns>Chahed value, if there's any; otherwise, null.</returns>
+        </member>
+        <member name="T:General.MoreThanOneObjectFoundException`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:General.MoreThanOneObjectFoundException`1.#ctor(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="propertyName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:General.ObjectNotFoundException`1">
+            <summary>
+            Exception when the app cannot find an specific object.
+            </summary>
+            <typeparam name="T">Type of an entity.</typeparam>
+        </member>
+        <member name="P:General.ObjectNotFoundException`1.IdOrName">
+            <summary>
+            ID or name of the instance of <typeparamref name="T"/> that cannot be found.
+            </summary>
+        </member>
+        <member name="M:General.ObjectNotFoundException`1.#ctor(System.Object)">
+            <summary>
+            Initialize an instance of <see cref="T:General.ObjectNotFoundException`1"/>.
+            </summary>
+            <param name="idOrName">ID or name of the instance of <typeparamref name="T"/> that cannot be found.</param>
+        </member>
+        <member name="T:General.OutOfRangeException">
+            <summary>
+            The exception that is thrown when the value of an argument is outside the allowable range of values.
+            This is an extension of <see cref="T:System.ArgumentOutOfRangeException"/>.
+            </summary>
+        </member>
+        <member name="P:General.OutOfRangeException.ValidValues">
+            <summary>
+            Gets valid values for the parameters which this <see cref="T:General.OutOfRangeException"/> has been raised for.
+            </summary>
+        </member>
+        <member name="M:General.OutOfRangeException.#ctor(System.String,System.Object,System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:General.OutOfRangeException"/>.
+            </summary>
+            <param name="paramName">The name of the parameter that caused the exception.</param>
+            <param name="actualValue">The value of the argument that causes this exception.</param>
+            <param name="validValues">The valid values for <paramref name="paramName"/>.</param>
+            <param name="message">The message that describes the error.</param>
+        </member>
+    </members>
+</doc>
